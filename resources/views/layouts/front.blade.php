@@ -19,28 +19,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Usando Vite -->
-    @vite(['resources/js/back.js'])
+    @vite(['resources/js/front.js'])
 </head>
 
 <body>
     <div>
         @include('layouts.partials.navbar')
 
-        <main class="container">
-            {{-- variabile flash per messaggio visivo all'utente(alert) --}}
-            @if (session('message'))
-                <div class="alert alert-{{ session('message_type') ? session('message_type') : 'success' }} my-3">
-                    {{-- uso l'operatore ternario per definire il colore dell'alert in base al message_type --}}
-                    {{ session('message') }}
-                </div>
-            @endif
-
-            @yield('title')
+        <main class="">
             @yield('content')
         </main>
     </div>
-    @yield('modals')
-    @yield('script')
 </body>
 
 </html>
